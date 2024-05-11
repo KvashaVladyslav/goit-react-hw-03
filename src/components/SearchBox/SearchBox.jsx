@@ -1,8 +1,13 @@
-export default function SearchBox({value, onFilter}) {
+import { useId } from "react"
+
+export default function SearchBox({ value, onFilter }) {
+
+    const filterInputId = useId();
+
     return (
         <div>
-            <label htmlFor="">Find contacts by name
-                <input value={value} onChange={(e) => onFilter(e.target.value)} type="text" />
+            <label htmlFor={filterInputId}>Find contacts by name
+                <input id={filterInputId} value={value} onChange={(e) => onFilter(e.target.value)} type="text" />
             </label>
             
         </div>
