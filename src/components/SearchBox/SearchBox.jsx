@@ -1,15 +1,15 @@
 import { useId } from "react"
+import css from "./SearchBox.module.css"
 
 export default function SearchBox({ value, onFilter }) {
 
     const filterInputId = useId();
 
     return (
-        <div>
-            <label htmlFor={filterInputId}>Find contacts by name
-                <input id={filterInputId} value={value} onChange={(e) => onFilter(e.target.value)} type="text" />
+        <div className={css.container}>
+            <label className={css.formField} htmlFor={filterInputId}>Find contacts by name
+                <input className={css.input} id={filterInputId} value={value} onChange={(e) => onFilter(e.target.value)} type="text" />
             </label>
-            
         </div>
     )
 }
